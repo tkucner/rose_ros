@@ -1,0 +1,8 @@
+<launch>
+  <arg name="map_file" default="$(find rose_ros)/test_map/test_map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!-- node name="talker" pkg="rose_ros" type="talker.py" / -->
+  <!-- node name="listener" pkg="rose_ros" type="listener.py" output="screen" / -->
+  <node name="map_listener" pkg="rose_ros" type="map_listener.py" output="screen" />
+</launch>
