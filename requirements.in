@@ -1,0 +1,7 @@
+numpy
+pypng
+Pillow
+scikit-image
+scikit-learn
+GridMapDecompose
+shapely

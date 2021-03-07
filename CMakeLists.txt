@@ -158,10 +158,15 @@ include_directories(
 # See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
 
 ## Mark executable scripts (Python etc.) for installation
-## in contrast to setup.py, you can choose the destination
+## in contrast to setup.py, you can choose the destination.
+#catkin_python_setup()
+
 catkin_generate_virtualenv(
-  PYTHON_INTERPRETER python3
+  PYTHON_INTERPRETER python3.7
   INPUT_REQUIREMENTS requirements.in
+  EXTRA_PIP_ARGS
+    -vvv
+  USE_SYSTEM_PACKAGES FALSE
   )
 
 install(FILES requirements.txt
