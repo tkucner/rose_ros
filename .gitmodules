@@ -1,0 +1,3 @@
+[submodule "rose"]
+	path = scripts/rose
+	url = git@github.com:tkucner/rose.git
