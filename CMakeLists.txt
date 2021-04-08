@@ -8,10 +8,11 @@ project(rose_ros)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  rospy
-  std_msgs
-  catkin_virtualenv
+        roscpp
+        rospy
+        std_msgs
+        catkin_virtualenv
+        message_generation
 )
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -54,11 +55,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+ add_service_files(
+   FILES
+   Save.srv
+ )
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -68,10 +68,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   std_msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -173,7 +173,7 @@ install(FILES requirements.txt
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
  catkin_install_python(PROGRAMS
-   scripts/map_listener.py
+         scripts/map_filter.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 

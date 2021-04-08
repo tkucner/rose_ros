@@ -3,9 +3,10 @@
   
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
-  <node name="map_listener" pkg="rose_ros" type="map_listener.py" output="screen">
+  <node name="map_filter" pkg="rose_ros" type="map_filter.py" output="screen">
     <param name="output_map" type="string" value="out_map" />
     <param name="input_map" type="string" value="map" />
     <param name="threshold" type="double" value="0.25" />
+    <param name="save_path" type="string" value="/home/tzkr/test_1.png" />
   </node>
 </launch>
